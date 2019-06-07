@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>SalaEngine Marines</title>
+    <link href="css/styles.css" rel="stylesheet" />
+    <script src="js/lib/atom-full-compiled.js"></script>
+    <script src="js/lib/libcanvas-full-compiled.js"></script>
+    <style>
+        .pull-left {
+            float: left;
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+        new function () {
+            LibCanvas.extract();
+
+            atom.dom(function () {
+                new Marines.Controller();
+            });
+        };
+    </script>
+    <div>
+        <div class="pull-left" id="left">
+
+        </div>
+        <div class="pull-left" id="right">
+
+        </div>
+    </div>
+    <script src="js/Marines.Action.js"></script>
+    <script src="js/Marines.Controller.js"></script>
+    <script src="js/Marines.Field.js"></script>
+    <script src="js/Marines.Game.js"></script>
+    <script src="js/Marines.Generator.js"></script>
+    <script src="js/Marines.Player.js"></script>
+    <script src="js/Marines.ShootingAction.js"></script>
+    <script src="js/Marines.ShootingField.js"></script>
+    <script src="js/Marines.View.js"></script>
+    <script src="js/Marines.Generator.js"></script>
+    </body>
+</html>

@@ -1,0 +1,55 @@
+﻿<html>
+	<head>
+		<style>
+			div {
+				display: flex;
+				justify-content: center;
+				align-content: center;
+				flex-direction: column;
+				text-align: center;
+				
+				width: 100%;
+				height: 100%;
+				
+				font-size: 3em;
+				color: #000;
+			}
+		</style>
+		<script type="text/javascript">
+			document.addEventListener("DOMContentLoaded", function(event) {
+				function formatNumberLength(num, length) {
+					var r = "" + num;
+					while (r.length < length) {
+						r = "0" + r;
+					}
+					return r;
+				}
+				var update = function() {
+					var date1 = new Date();
+					var date2 = new Date(2015, 11, 10)
+					var totalMillis = Math.abs(date2.getTime() - date1.getTime());
+					var totalSeconds = Math.floor(totalMillis / 1000);
+					var seconds = totalSeconds % 60;
+					var totalMinutes = Math.floor(totalSeconds / 60);
+					var minutes = totalMinutes % 60;
+					var totalHours = Math.floor(totalMinutes / 60);
+					var hours = totalHours % 24;
+					var totalDays = Math.floor(totalHours / 24);
+					document.querySelector('#totalDays').innerHTML = totalDays.toLocaleString();
+					document.querySelector('#totalHours').innerHTML = totalHours.toLocaleString();
+					document.querySelector('#totalMinutes').innerHTML = totalMinutes.toLocaleString();
+					document.querySelector('#totalSeconds').innerHTML = totalSeconds.toLocaleString();
+				};
+				setInterval(update, 1000)
+			});
+		</script>
+	</head>
+	<body>
+		<div>
+			<p><span id="totalDays">...</span> дней</p>
+			<p><span id="totalHours">...</span> часов</p> 
+			<p><span id="totalMinutes">...</span> минут </p>
+			<p><span id="totalSeconds">...</span> секунд </p>
+		</div>
+	</body>
+</html>
